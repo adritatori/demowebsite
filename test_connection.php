@@ -73,11 +73,11 @@ ini_set('display_errors', 1);
         <h1>🔍 Database Connection Test</h1>
 
         <?php
-        // Configuration (MUST match config.php)
+        // Configuration (matches lamp_lab.sh setup)
         $host = 'localhost';
-        $db = 'secure_website';
-        $user = 'root';
-        $pass = '';  // ⚠️ UPDATE THIS WITH YOUR MYSQL PASSWORD!
+        $db = 'studentdb';       // Database from lamp_lab.sh
+        $user = 'student';       // User from lamp_lab.sh
+        $pass = 'Password123!';  // Password from lamp_lab.sh
 
         echo "<h2>Configuration Details</h2>";
         echo "<div class='test-item'>";
@@ -87,14 +87,9 @@ ini_set('display_errors', 1);
         echo "<li><strong>User:</strong> " . htmlspecialchars($user) . "</li>";
         echo "<li><strong>Password:</strong> ";
         if (empty($pass)) {
-            echo "<span class='error'>❌ EMPTY - This is likely the problem!</span>";
-            echo "<div class='info' style='margin-top:10px;'>";
-            echo "<strong>⚠️ ACTION REQUIRED:</strong><br>";
-            echo "Edit this file and add your MySQL password on line 20:<br>";
-            echo "<code>\$pass = 'your_mysql_password';</code>";
-            echo "</div>";
+            echo "<span class='error'>❌ EMPTY</span>";
         } else {
-            echo "<span class='success'>✅ Set (" . strlen($pass) . " characters)</span>";
+            echo "<span class='success'>✅ Set (" . strlen($pass) . " characters - from lamp_lab.sh)</span>";
         }
         echo "</li>";
         echo "</ul>";

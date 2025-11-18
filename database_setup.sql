@@ -1,8 +1,8 @@
 -- Database Setup for Secure Website Demo
--- Run this script to create the database and tables
+-- Uses existing studentdb database from lamp_lab.sh
+-- Run this script to create the tables
 
-CREATE DATABASE IF NOT EXISTS secure_website;
-USE secure_website;
+USE studentdb;
 
 -- Users table with secure password storage
 CREATE TABLE IF NOT EXISTS users (
@@ -36,7 +36,5 @@ INSERT INTO users (username, password, email) VALUES
 ('demo', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'demo@example.com')
 ON DUPLICATE KEY UPDATE username=username;
 
--- Grant privileges (adjust as needed)
--- CREATE USER IF NOT EXISTS 'webuser'@'localhost' IDENTIFIED BY 'your_secure_password';
--- GRANT SELECT, INSERT, UPDATE, DELETE ON secure_website.* TO 'webuser'@'localhost';
--- FLUSH PRIVILEGES;
+-- Note: Database user 'student' with password 'Password123!' was created by lamp_lab.sh
+-- No need to create additional users - using existing setup
