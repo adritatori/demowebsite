@@ -14,11 +14,11 @@ if (!defined('SECURE_ACCESS')) {
     die('Direct access not permitted');
 }
 
-// Database Configuration
+// Database Configuration (from lamp_lab.sh)
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'secure_website');
-define('DB_USER', 'root');  // Change this to your MySQL user
-define('DB_PASS', '');      // Change this to your MySQL password
+define('DB_NAME', 'studentdb');      // Using database from lamp_lab.sh
+define('DB_USER', 'student');        // Using user from lamp_lab.sh
+define('DB_PASS', 'Password123!');   // Using password from lamp_lab.sh
 define('DB_CHARSET', 'utf8mb4');
 
 // Security Configuration
